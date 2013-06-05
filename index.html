@@ -1,12 +1,18 @@
 <html>
   <head>
-    <script src="index.js"></script>
-    <script type="text/javascript">
-      init();
-    </script>
   </head>
 
   <body>
-    <h1> Hello </h1>
+    <div id="controlls">
+      <h2>Slide to adjust sound delay</h2>
+      <input id="slider" type="range" min="0" max="1" step="0.05">
+      <p>Delay: <span id="delay">0</span></p>
+    </div>
   </body>
+  <footer>
+    <script src="index.js"></script>
+    <script type="text/javascript">
+      init();
+    </script>    
+  </footer>
 </html>

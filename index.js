@@ -10,9 +10,19 @@ function init() {
 
     mic.connect(filter);
     filter.connect(context.destination);
+
+    // Handle slider
+    var delay  = document.getElementById('delay');
+    var slider = document.getElementById('slider');
+    
+    slider.onchange = function(e) {
+      filter.delayTime.value = slider.value;
+      delay.innerHTML = slider.value;
+    }
   }, handleError);
 
   var handleError = function() {
     console.log('> ERROR ', arguments);
   }
+
 }
