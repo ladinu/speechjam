@@ -8,6 +8,6 @@ get confused because of the slight delay and struggle to continue speaking. See 
 information.
 
 ## Usage
-1. Open `index.html` in a compatible browser (Only tested on Chromium 29.0.1515.0)
+1. Serve `index.html` and `index.js` in a compatible browser (Only tested on Chromium 29.0.1515.0)
 2. Put on some headphones and turn up the volume
 3. Try to speak a sentence
