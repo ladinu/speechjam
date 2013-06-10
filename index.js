@@ -1,8 +1,21 @@
 function init() {
-  var context = new window.webkitAudioContext();
+
+  var getAudioContext = function() {
+    var context = ( window.AudioContext    || window.webkitAudioContext ||
+                    window.mozAudioContext || window.msAudioContext );
+    return new context();
+  }
+
+  navigator.getMedia = (
+      navigator.getUserMedia    || navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia || navigator.msGetUserMedia );
+
+
+  var context = getAudioContext();
   var options = {'audio': true, 'video': false};
 
-  navigator.webkitGetUserMedia(options, function(stream) {
+  navigator.getMedia(options, function(stream) {
+    console.log("> Stream URL:", URL.createObjectURL(stream));
     var mic = context.createMediaStreamSource(stream);
     var filter = context.createDelay();
 
